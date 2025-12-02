@@ -1,0 +1,8 @@
+This part contains the following files:
+00-Prerequisites/
+├── 01-what-is-devops.md
+├── 02-linux-basics.md
+├── 03-shell-scripting.md
+├── 04-networking-basics.md
+├── 05-git-basics.md
+└── 06-github-workflow.md
