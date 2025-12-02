@@ -6,3 +6,91 @@ This part contains the following files:
 ├── 04-networking-basics.md
 ├── 05-git-basics.md
 └── 06-github-workflow.md
+
+------------------------------------------------------------------------------------------------
+01) What is devops?
+--> DevOps is a combination of "Development (Dev)" and "Operations (Ops)".  
+It is a cultural and technical practice that improves:
+- Collaboration
+- Automation
+- Continuous delivery
+- Software quality
+- Infrastructure reliability
+
+## Why DevOps Exists?
+--> Before DevOps, developers and operations teams worked separately:
+
+- Developers: Write code  
+- Operations: Deploy & maintain servers  
+
+This caused delays, miscommunication, and bugs.
+
+DevOps solves these problems using:
+- Automation  
+- CI/CD  
+- Infrastructure as Code  
+- Monitoring  
+- Containerization  
+- Cloud computing  
+
+## DevOps Lifecycle
+1. Planning – Define requirements, features, and improvements using tools like Jira or Trello.
+
+2. Coding/Development – Write and manage code collaboratively, often using Git.
+
+3. Building – Compile code into deployable artifacts using CI tools like Jenkins or GitLab CI.
+
+4. Testing – Automated and manual tests to ensure quality and reliability.
+
+5. Release – Deploy the code to staging or production environments.
+
+6. Deploy – Continuous deployment into production with minimal downtime.
+
+7. Operate – Monitor performance, logs, and infrastructure.
+
+8. Monitor – Collect metrics and feedback for improvements.
+
+          ┌─────────┐
+          │ Planning│
+          └────┬────┘
+               │
+               ▼
+        ┌─────────────┐
+        │ Development │
+        └────┬────────┘
+             │
+             ▼
+         ┌───────┐
+         │ Build │
+         └────┬──┘
+              │
+              ▼
+         ┌────────┐
+         │ Testing│
+         └────┬───┘
+              │
+              ▼
+         ┌────────┐
+         │ Release│
+         └────┬───┘
+              │
+              ▼
+         ┌────────┐
+         │ Deploy │
+         └────┬───┘
+              │
+              ▼
+         ┌────────┐
+         │ Operate│
+         └────┬───┘
+              │
+              ▼
+         ┌────────┐
+         │ Monitor│
+         └───┬────┘
+              │
+              └─────────► (loops back to Planning)
+
+
+
+
