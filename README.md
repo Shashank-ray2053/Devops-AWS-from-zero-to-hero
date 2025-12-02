@@ -1,4 +1,3 @@
-# Devops-AWS-from-zero-to-hero
 # 🚀 DevOps & AWS — From Zero to Hero  
 A complete, fully documented, production-grade DevOps + AWS learning path.  
 This repository contains detailed explanations, diagrams, code labs, real-world projects, and hands-on exercises.
@@ -65,13 +64,8 @@ This repository contains detailed explanations, diagrams, code labs, real-world 
 - Terraform infra  
 - EKS deployment  
 - Monitoring stack  
-- Enterprise-level DevOps workflow  
-
--------------------------------------
-
-## Repository Structure
-(See full folder tree above.)
-
+- Enterprise-level DevOps workflow
+- 
 -------------------------------------
 ## Who This is For?
 - Aspiring DevOps Engineers  
