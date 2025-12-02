@@ -92,5 +92,326 @@ DevOps solves these problems using:
               └─────────► (loops back to Planning)
 
 
+**********************************************************************************************************
+
+                                        Linux Basics for DevOps
+--> Linux is the backbone of DevOps and cloud computing.
+AWS EC2, Docker containers, Kubernetes nodes, all run on Linux.
+
+1. Linux Directory Structure
+/
+├── bin     (binaries)
+├── etc     (configuration)
+├── home    (user home directories)
+├── usr     (apps & tools)
+├── var     (logs)
+├── tmp     (temporary files)
+└── root    (root user)
+
+2. Important Linux Commands
+🔍 Navigation
+pwd      # show current directory
+ls       # list files
+cd       # change directory
+
+📁 File Operations
+cp file1 file2
+mv old new
+rm file
+mkdir folder
+touch file.txt
+
+📃 Viewing Files
+cat file
+head file
+tail file
+less file
+
+🔧 Permissions
+chmod 755 file
+chown user:user file
+
+🔍 System Info
+top
+df -h
+free -m
+uname -a
+
+3. Useful Shortcuts
+Ctrl + C → stop process
+Ctrl + Z → pause
+Ctrl + L → clear
+Tab → autocomplete
+
+
+*********************************************************************************************
+                                        Shell Scripting for DevOps
+    --> Shell scripts automate repetitive tasks.  
+
+1. Basic Script Structure
+#!/bin/bash
+echo "Hello DevOps"
+
+Save as: script.sh
+To Run: 
+chmod +x script.sh
+./script.sh
+
+2. Variables
+NAME="DevOps"
+echo "Welcome $NAME"
+
+3. Conditional Statements
+if [ $1 -gt 10 ]; then
+  echo "Value greater than 10"
+else
+  echo "Value less than or equal to 10"
+fi
+
+4. Loops
+For Loop:
+for i in 1 2 3 4 5
+do
+  echo "Number $i"
+done
+
+While Loop:
+count=1
+while [ $count -le 5 ]
+do
+  echo "Count: $count"
+  count=$((count+1))
+done
+
+5. Functions
+hello() {
+  echo "Hello from DevOps function!"
+}
+hello
+
+*********************************************************************************************
+                                   Networking Basics for DevOps
+
+--> Networking is essential for AWS, Kubernetes, Docker, CI/CD, and servers.
+--> IP Address – Device identifier on a network.
+--> Subnet – Divides a network into smaller parts.
+--> DNS – Converts names to IPs.
+--> Port – Communication channel on a device.
+--> Protocol – Rules for network communication.
+--> Firewall – Blocks or allows network traffic.
+--> Load Balancer – Distributes traffic to servers.
+--> VPN – Secure private network connection.
+--> SSH Tunnel – Encrypted remote connection.
+--> Container Networking – Connects containers/services.
+
+1. Key Networking Concepts
+--> IP Address
+Identifies devices on a network.
+
+--> Subnet
+A smaller portion of a network.
+
+--> DNS
+Translates domain into IP.
+
+--> Ports
+Identify applications on a machine.
+
+Port	Service
+22	SSH
+80	HTTP
+443	HTTPS
+3306	MySQL
+
+2. OSI Model 
+--> The OSI (Open Systems Interconnection) Model is a 7-layer framework that standardizes network communication. Each layer has a specific function:
+
+7 ─ Application      → User interface, applications (HTTP, FTP, SMTP)
+6 ─ Presentation     → Data translation, encryption, compression (SSL, JPEG)
+5 ─ Session          → Manages sessions and connections
+4 ─ Transport        → Reliable/unreliable delivery, flow control (TCP/UDP)
+3 ─ Network          → Routing and logical addressing (IP)
+2 ─ Data Link        → Frames, MAC addresses, error detection (Ethernet)
+1 ─ Physical         → Bits, cables, switches, physical transmission
+
+---------------------------------
+Note: DevOps mostly works with:
+Layer 4 (TCP/UDP) & Layer 3 (IP)
+--------------------------------------
+3. Important Commands
+--> Connectivity
+ping google.com
+curl httpbin.org/get
+wget url
+
+--> Ports
+netstat -tulpn
+ss -tulpn
+
+--> DNS
+nslookup google.com
+dig amazon.com
+
+***************************************************************************************************************************************************************
+                                                                      Git Basics
+--> Git is the most important tool in DevOps.
+--> Git is a distributed version control system, meaning repositories can exist locally and remotely.
+--> Tracking Changes – Git keeps a history of all changes, making it easy to revert, compare, or recover previous versions.
+--> Branches – Developers can create multiple branches for features, bug fixes, or experiments without affecting the main code.
+--> Merging & Conflict Resolution – Changes from different branches can be merged; conflicts are handled manually if needed.
+--> Remote Repositories – Git supports collaboration via platforms like GitHub, GitLab, and Bitbucket.
+--> Staging Area – The index or staging area allows selective commits, giving control over what changes to record.
+--> Fast & Lightweight – Git is optimized for speed and can handle large projects efficiently.
+--> Security – Uses SHA‑1 hashing to ensure integrity of commits and history.
+
+1. Configure Git
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+----------------------------------------------------------------------------------------------------
+2. Git Workflow
+
+Remote Repository
+       ▲
+       │  git pull / fetch
+       │
+Local Repository
+   ┌─────────────┐
+   │  Clone      │
+   └─────┬───────┘
+         │
+         ▼
+   ┌─────────────┐
+   │  Modify     │
+   └─────┬───────┘
+         │
+         ▼
+   ┌─────────────┐
+   │  Stage      │ git add
+   └─────┬───────┘
+         │
+         ▼
+   ┌─────────────┐
+   │  Commit     │ git commit
+   └─────┬───────┘
+         │
+         ▼
+   ┌─────────────┐
+   │  Branch     │ create/checkout
+   └─────┬───────┘
+         │
+         ▼
+   ┌─────────────┐
+   │  Push       │ git push
+   └─────┬───────┘
+         │
+         ▼
+Remote Repository
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Basic Commands
+Initialize
+git init
+
+Add & Commit
+git add .
+git commit -m "message"
+
+Push
+git push origin main
+
+Branching
+git branch dev
+git checkout dev
+git merge dev
+
+4. Cloning
+git clone <repo-url>
+
+***************************************************************************************************************************************************************
+                                                             GitHub Workflow for DevOps
+
+--> GitHub hosts repositories and automates development.
+--> Work locally, track changes, collaborate with branches, and sync with the remote repo.
+
+  1. GitHub Flow Diagram
+
+Remote Repository
+       ▲
+       │  Pull / Fetch
+       │
+Local Repository
+   ┌───────────┐
+   │   Clone   │
+   └─────┬─────┘
+         │
+         ▼
+   ┌───────────┐
+   │  Modify   │
+   └─────┬─────┘
+         │
+         ▼
+   ┌───────────┐
+   │  Stage    │
+   └─────┬─────┘
+         │
+         ▼
+   ┌───────────┐
+   │  Commit   │
+   └─────┬─────┘
+         │
+         ▼
+   ┌───────────┐
+   │  Branch   │
+   └─────┬─────┘
+         │
+         ▼
+   ┌───────────┐
+   │   Push    │
+   └─────┬─────┘
+         │
+         ▼
+Remote Repository
+-----------------------------------------------------------------------------------------------
+2. Creating a Repository
+
+- Go to GitHub
+
+- Click "New Repository"
+
+- Add README
+
+- Push your code
+
+3. Pull Requests
+
+Used for:
+
+Code reviews
+
+CI/CD triggers
+
+Collaboration
+
+4. Issues
+
+Track bugs & tasks.
+
+5. GitHub Actions (CI/CD)
+
+GitHub Actions can:
+
+Build code
+
+Test
+
+Deploy to AWS/EKS
+
+Run Terraform
+
+
+
+
+
+
 
 
